@@ -1,6 +1,8 @@
 # demo-mgt-react
 Simple demo that use MGT (Microsoft Graph Toolkit) in a React App using TypeScript.
+
 Before starting, edit the app.tsx file to insert the correct clientId:
+
 `Providers.globalProvider = new  MsalProvider({ clientId:  '[CLIENT_ID]' });`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
