@@ -1,5 +1,5 @@
 # demo-mgt-react
-Simple demo that use MGT (Microsoft Graph Toolkit) in a React App using TypeScript.
+Simple demo that use MGT (Microsoft Graph Toolkit) in a React App using TypeScript and Tailwind CSS
 
 Before starting, edit the app.tsx file to insert the correct clientId:
 
