@@ -26,8 +26,8 @@ const Event = (props: MgtTemplateProps) => {
 
     const getTime = (dateString: string) => {
         let dateObject = new Date(dateString);
-        return dateObject.getHours().toString().padEnd(2, '0')
-            + ':' + dateObject.getMinutes().toString().padEnd(2, '0');
+        return dateObject.getHours().toString().padStart(2, '0')
+            + ':' + dateObject.getMinutes().toString().padStart(2, '0');
     };
 
     return (
