@@ -1,9 +1,9 @@
-import React, { useState, useRef, useLayoutEffect } from 'react';
+import React from 'react';
 import '@microsoft/mgt';
 import { Agenda, MgtTemplateProps } from 'mgt-react';
 import './tailwind.generated.css';
 
-const AgendaWC = () => {
+const AgendaReact = () => {
     return (
         <Agenda groupByDay={true} >
             <Event template="event" />
@@ -36,13 +36,13 @@ const Event = (props: MgtTemplateProps) => {
                 {event.subject}
             </div>
 
-            {(getDate(event.start.dateTime) == getDate(event.end.dateTime)) ?
+            {(getDate(event.start.dateTime) === getDate(event.end.dateTime)) ?
                 <div className="tracking-tight">
                     from {getTime(event.start.dateTime)} to {getTime(event.end.dateTime)}
                 </div>
                 : null
             }
-            {(event.body.content != '') ?
+            {(event.body.content !== '') ?
                 <div className="overflow-y-auto mt-3 p-1 bg-gray-200"
                     dangerouslySetInnerHTML={{ __html: event.body.content }}
                     style={{ maxHeight: "150px" }} />
@@ -58,4 +58,4 @@ const NoData = (props: MgtTemplateProps) => {
       </div>
 };
 
-export default AgendaWC;
+export default AgendaReact;
