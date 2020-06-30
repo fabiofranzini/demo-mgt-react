@@ -1,24 +1,19 @@
-import React, { useState, useLayoutEffect } from 'react';
-import { Providers, MsalProvider } from '@microsoft/mgt';
+import React, { useState } from 'react';
+import { Providers, MsalProvider, ProviderState } from '@microsoft/mgt';
 import './tailwind.generated.css';
 import AgendaWC from './agendaWC'
 import AgendaReact from './agendaReact';
 import NavBar from './navBar'
 
-
 function App() {
-
-  Providers.globalProvider = new MsalProvider({ clientId: '[CLIENT_ID]' });
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  useLayoutEffect(() => {
-    if (Providers.globalProvider.state === 0)
-      setIsLoggedIn(true);
-
-    if (Providers.globalProvider.state === 1)
-      setIsLoggedIn(false);
-  }, []);
+  Providers.globalProvider = new MsalProvider({ clientId: '[CLIENT_ID]' });
+  Providers.globalProvider.onStateChanged((e) => {
+    if (Providers.globalProvider.state !== ProviderState.Loading)
+      setIsLoggedIn(Providers.globalProvider.state === ProviderState.SignedIn);
+  });
 
   return (
     <div>

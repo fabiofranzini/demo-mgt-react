@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from 'react';
+import React from 'react';
 import '@microsoft/mgt';
 import './tailwind.generated.css';
 

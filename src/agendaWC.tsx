@@ -1,11 +1,11 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import '@microsoft/mgt';
 import './tailwind.generated.css';
 
 const AgendaWC = () => {
     const agendaRef = useRef<any>(null);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         agendaRef.current.templateContext = {
             openWebLink: (e: any, context: { event: { webLink: string | undefined; }; }, root: any) => {
                 window.open(context.event.webLink, '_blank');
