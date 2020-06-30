@@ -1,3 +1,5 @@
+Please refer to this repo: https://github.com/microsoftgraph/mgtLap-TryItOut
+
 # demo-mgt-react
 Simple demo that use MGT (Microsoft Graph Toolkit) in a React App using TypeScript and Tailwind CSS
 
